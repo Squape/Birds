@@ -1,0 +1,59 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Scripts/PlayerController.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/Bird/Bird1.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Bird/Bird2.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Bird/Bird3.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Bird/Bird4.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Bird/Bird5.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/Bird/Bird6.png" type="Texture" id=7]
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 8.5, 6.5 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 7.5, 6 )
+
+[sub_resource type="SpriteFrames" id=7]
+animations = [ {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "Standing",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "Gliding",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "Jumping",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "Rekt",
+"speed": 5.0
+} ]
+
+[node name="Bird" type="KinematicBody2D"]
+script = ExtResource( 1 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( -0.5, -5.5 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -0.5, -6 )
+shape = SubResource( 6 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( -21, -14 )
+frames = SubResource( 7 )
+animation = "Rekt"
+playing = true
+offset = Vector2( 21, 6 )
+flip_h = true

@@ -1,0 +1,75 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Scripts/Enemy.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/Others/ExplosionParticle.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Enemies/FlyingEnemy.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 7, 7.5 )
+
+[sub_resource type="CanvasItemMaterial" id=8]
+particles_animation = true
+particles_anim_h_frames = 4
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Gradient" id=9]
+offsets = PoolRealArray( 0, 0.149068, 0.354037, 0.52795, 0.639752, 0.78882, 1 )
+colors = PoolColorArray( 0.891078, 0.954102, 0.0819931, 1, 0.926758, 0.616146, 0.0941238, 1, 0.880371, 0.436508, 0.0584621, 1, 0.942022, 0.290251, 0.119422, 1, 0.966309, 0.232634, 0.143436, 1, 0.223633, 0.223633, 0.223633, 1, 0.890196, 0.890196, 0.890196, 0 )
+
+[sub_resource type="GradientTexture" id=6]
+gradient = SubResource( 9 )
+width = 20
+
+[sub_resource type="ParticlesMaterial" id=10]
+lifetime_randomness = 0.18
+emission_shape = 1
+emission_sphere_radius = 15.0
+flag_disable_z = true
+direction = Vector3( 0, -1, 0 )
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 22.56
+initial_velocity_random = 0.36
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+angle = 162.5
+angle_random = 1.0
+scale_random = 1.0
+color_ramp = SubResource( 6 )
+anim_speed = 1.0
+anim_speed_random = 0.49
+
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 8.33333, 8.16666 )
+
+[node name="FlyingEnemy" type="StaticBody2D"]
+position = Vector2( 611, 327 )
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 1.5 )
+scale = Vector2( 3, 3 )
+shape = SubResource( 7 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0, -24 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Particles2D" type="Particles2D" parent="."]
+material = SubResource( 8 )
+scale = Vector2( 3, 3 )
+z_index = 2
+emitting = false
+lifetime = 0.5
+one_shot = true
+explosiveness = 0.54
+process_material = SubResource( 10 )
+texture = ExtResource( 2 )
+
+[node name="Area2D" type="Area2D" parent="."]
+scale = Vector2( 3, 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 0, -0.166664 )
+shape = SubResource( 11 )
