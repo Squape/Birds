@@ -16,6 +16,10 @@ var game_started = false
 
 var floor_hits = 0
 
+export var is_touching_floor = false
+
+var rng = RandomNumberGenerator.new()
+
 func jump(jump_force):
 	motion.y = -jump_force
 	can_move = true
@@ -44,6 +48,8 @@ func _physics_process(delta):
 	if is_on_floor() and !game_started:
 		if Input.is_action_just_pressed("ui_up"):
 			$AnimatedSprite.animation = "Jumping"
+			rng.randomize()
+			get_node("Sounds/Jump " + str(rng.randi_range(1, 10))).playing = true
 			jump(jump_force)
 
 	var bodies = $Area2D.get_overlapping_bodies()
@@ -55,7 +61,7 @@ func _physics_process(delta):
 				can_move = false
 				$AnimatedSprite.animation = "Rekt"
 				
-		elif body is StaticBody2D:
+		elif body is StaticBody2D and "Enemy" in body.name and $AnimatedSprite.animation != "Rekt":
 			jump(bounce_force)
 	
 	motion = move_and_slide(motion, Vector2.UP)

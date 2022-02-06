@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scenes/Template.tscn" type="PackedScene" id=2]
+
+[node name="Level Template" instance=ExtResource( 2 )]
+
+[node name="Win" parent="." index="0"]
+position = Vector2( 1056, -950 )
+
+[node name="TileMap" parent="." index="1"]
+tile_data = PoolIntArray( 589821, 0, 0, 589822, 2, 0, 589823, 1, 0 )
+
+[node name="Bird" parent="." index="3"]
+position = Vector2( -94, 495 )

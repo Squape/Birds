@@ -1,8 +1,18 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Sprites/Enemies/Enemy.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Enemy.gd" type="Script" id=2]
 [ext_resource path="res://Sprites/Others/ExplosionParticle.png" type="Texture" id=3]
+[ext_resource path="res://Sounds/Explosion 1.wav" type="AudioStream" id=4]
+[ext_resource path="res://Sounds/Explosion 4.wav" type="AudioStream" id=5]
+[ext_resource path="res://Sounds/Explosion 10.wav" type="AudioStream" id=6]
+[ext_resource path="res://Sounds/Explosion 2.wav" type="AudioStream" id=7]
+[ext_resource path="res://Sounds/Explosion 5.wav" type="AudioStream" id=8]
+[ext_resource path="res://Sounds/Explosion 8.wav" type="AudioStream" id=9]
+[ext_resource path="res://Sounds/Explosion 9.wav" type="AudioStream" id=10]
+[ext_resource path="res://Sounds/Explosion 7.wav" type="AudioStream" id=11]
+[ext_resource path="res://Sounds/Explosion 6.wav" type="AudioStream" id=12]
+[ext_resource path="res://Sounds/Explosion 3.wav" type="AudioStream" id=13]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 7, 7.5 )
@@ -40,7 +50,7 @@ anim_speed = 1.0
 anim_speed_random = 0.49
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 7.66667, 8.16667 )
+extents = Vector2( 8.33333, 8.16667 )
 
 [node name="Enemy" type="StaticBody2D"]
 scale = Vector2( 3, 3 )
@@ -66,5 +76,37 @@ texture = ExtResource( 3 )
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( -2.38419e-07, -0.166666 )
+position = Vector2( 2.38419e-07, -0.166666 )
 shape = SubResource( 2 )
+
+[node name="Sounds" type="Node2D" parent="."]
+
+[node name="Explosion 1" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource( 4 )
+
+[node name="Explosion 2" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource( 7 )
+
+[node name="Explosion 3" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource( 13 )
+
+[node name="Explosion 4" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource( 5 )
+
+[node name="Explosion 5" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource( 8 )
+
+[node name="Explosion 6" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource( 12 )
+
+[node name="Explosion 7" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource( 11 )
+
+[node name="Explosion 8" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource( 9 )
+
+[node name="Explosion 9" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource( 10 )
+
+[node name="Explosion 10" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource( 6 )

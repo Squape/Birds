@@ -1,0 +1,46 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Presets/Enemy.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Template.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Presets/FlyingEnemy.tscn" type="PackedScene" id=3]
+
+[node name="Level Template" instance=ExtResource( 2 )]
+
+[node name="Win" parent="." index="0"]
+position = Vector2( 1495, 480 )
+
+[node name="Control" parent="Win" index="2"]
+next_level = "Level 4"
+
+[node name="TileMap" parent="." index="1"]
+tile_data = PoolIntArray( 524310, 0, 0, 524311, 1, 0, 983056, 0, 0, 983057, 2, 0, 983058, 2, 0, 983059, 1, 0, 1179649, 0, 0, 1179650, 2, 0, 1179651, 1, 0, 1179659, 0, 0, 1179660, 2, 0, 1179661, 2, 0, 1179662, 1, 0, 1245188, 0, 0, 1245189, 2, 0, 1245190, 2, 0, 1245191, 2, 0, 1245192, 1, 0 )
+
+[node name="Enemy" parent="." index="4" instance=ExtResource( 1 )]
+position = Vector2( 515, 1192 )
+
+[node name="FlyingEnemy" parent="." index="5" instance=ExtResource( 3 )]
+position = Vector2( 868, 1080 )
+
+[node name="Enemy2" parent="." index="6" instance=ExtResource( 1 )]
+position = Vector2( 1057, 936 )
+
+[node name="FlyingEnemy2" parent="." index="7" instance=ExtResource( 3 )]
+position = Vector2( 1387, 865 )
+
+[node name="FlyingEnemy4" parent="." index="8" instance=ExtResource( 3 )]
+position = Vector2( 1643, 705 )
+
+[node name="FlyingEnemy5" parent="." index="9" instance=ExtResource( 3 )]
+position = Vector2( 1649, 583 )
+
+[node name="FlyingEnemy6" parent="." index="10" instance=ExtResource( 3 )]
+position = Vector2( 1700, 583 )
+
+[node name="FlyingEnemy7" parent="." index="11" instance=ExtResource( 3 )]
+position = Vector2( 1751, 583 )
+
+[node name="FlyingEnemy3" parent="." index="12" instance=ExtResource( 3 )]
+position = Vector2( 1802, 583 )
+
+[node name="FlyingEnemy8" parent="." index="13" instance=ExtResource( 3 )]
+position = Vector2( 1900.54, 705 )

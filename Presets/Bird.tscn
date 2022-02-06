@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Scripts/PlayerController.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Bird/Bird1.png" type="Texture" id=2]
@@ -7,6 +7,16 @@
 [ext_resource path="res://Sprites/Bird/Bird4.png" type="Texture" id=5]
 [ext_resource path="res://Sprites/Bird/Bird5.png" type="Texture" id=6]
 [ext_resource path="res://Sprites/Bird/Bird6.png" type="Texture" id=7]
+[ext_resource path="res://Sounds/Jump6.wav" type="AudioStream" id=8]
+[ext_resource path="res://Sounds/Jump4.wav" type="AudioStream" id=9]
+[ext_resource path="res://Sounds/Jump3.wav" type="AudioStream" id=10]
+[ext_resource path="res://Sounds/Jump9.wav" type="AudioStream" id=11]
+[ext_resource path="res://Sounds/Jump1.wav" type="AudioStream" id=12]
+[ext_resource path="res://Sounds/Jump5.wav" type="AudioStream" id=13]
+[ext_resource path="res://Sounds/Jump8.wav" type="AudioStream" id=14]
+[ext_resource path="res://Sounds/Jump7.wav" type="AudioStream" id=15]
+[ext_resource path="res://Sounds/Jump10.wav" type="AudioStream" id=16]
+[ext_resource path="res://Sounds/Jump2.wav" type="AudioStream" id=17]
 
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 8.5, 6.5 )
@@ -21,11 +31,6 @@ animations = [ {
 "name": "Standing",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 3 ) ],
-"loop": true,
-"name": "Gliding",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 6 ) ],
 "loop": true,
 "name": "Jumping",
@@ -34,6 +39,11 @@ animations = [ {
 "frames": [ ExtResource( 7 ) ],
 "loop": true,
 "name": "Rekt",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "Gliding",
 "speed": 5.0
 } ]
 
@@ -53,7 +63,39 @@ shape = SubResource( 6 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( -21, -14 )
 frames = SubResource( 7 )
-animation = "Rekt"
+animation = "Standing"
 playing = true
 offset = Vector2( 21, 6 )
 flip_h = true
+
+[node name="Sounds" type="Node2D" parent="."]
+
+[node name="Jump 1" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 12 )
+
+[node name="Jump 2" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 17 )
+
+[node name="Jump 3" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 10 )
+
+[node name="Jump 4" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 9 )
+
+[node name="Jump 5" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 13 )
+
+[node name="Jump 6" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 8 )
+
+[node name="Jump 7" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 15 )
+
+[node name="Jump 8" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 14 )
+
+[node name="Jump 9" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 11 )
+
+[node name="Jump 10" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 16 )
