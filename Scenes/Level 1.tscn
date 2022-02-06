@@ -8,13 +8,14 @@
 [node name="Level Template" instance=ExtResource( 1 )]
 
 [node name="Win" parent="." index="0"]
-position = Vector2( 762, 1120 )
+position = Vector2( 761, 1130 )
+rotation = 0.218166
 
-[node name="Control" parent="Win" index="2"]
+[node name="Control" parent="Win" index="3"]
 next_level = "Level 2"
 
 [node name="TileMap" parent="." index="1"]
-tile_data = PoolIntArray( 1179649, 0, 0, 1179650, 2, 0, 1179651, 1, 0, 1179658, 0, 0, 1179659, 2, 0, 1179660, 1, 0, 1245188, 0, 0, 1245189, 2, 0, 1245190, 2, 0, 1245191, 2, 0, 1245192, 2, 0, 1245193, 1, 0 )
+tile_data = PoolIntArray( 1179649, 4, 0, 1179650, 6, 0, 1179651, 5, 0, 1179658, 4, 0, 1179659, 6, 0, 1179660, 5, 0, 1245188, 4, 0, 1245189, 6, 0, 1245190, 6, 0, 1245191, 6, 0, 1245192, 6, 0, 1245193, 5, 0 )
 
 [node name="Enemy" parent="." index="4" instance=ExtResource( 2 )]
 position = Vector2( 512, 1192 )

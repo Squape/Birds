@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Scripts/PlayerController.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Bird/Bird1.png" type="Texture" id=2]
@@ -17,6 +17,11 @@
 [ext_resource path="res://Sounds/Jump7.wav" type="AudioStream" id=15]
 [ext_resource path="res://Sounds/Jump10.wav" type="AudioStream" id=16]
 [ext_resource path="res://Sounds/Jump2.wav" type="AudioStream" id=17]
+[ext_resource path="res://Sounds/Ground3.wav" type="AudioStream" id=18]
+[ext_resource path="res://Sounds/Ground5.wav" type="AudioStream" id=19]
+[ext_resource path="res://Sounds/Ground2.wav" type="AudioStream" id=20]
+[ext_resource path="res://Sounds/Ground1.wav" type="AudioStream" id=21]
+[ext_resource path="res://Sounds/Ground4.wav" type="AudioStream" id=22]
 
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 8.5, 6.5 )
@@ -99,3 +104,18 @@ stream = ExtResource( 11 )
 
 [node name="Jump 10" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource( 16 )
+
+[node name="Ground 1" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 21 )
+
+[node name="Ground 2" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 20 )
+
+[node name="Ground 3" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 18 )
+
+[node name="Ground 4" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 22 )
+
+[node name="Ground 5" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 19 )

@@ -60,6 +60,8 @@ func _physics_process(delta):
 				print("[Game] Player lost")
 				can_move = false
 				$AnimatedSprite.animation = "Rekt"
+				rng.randomize()
+				get_node("Sounds/Ground " + str(rng.randi_range(1, 5))).playing = true
 				
 		elif body is StaticBody2D and "Enemy" in body.name and $AnimatedSprite.animation != "Rekt":
 			jump(bounce_force)
